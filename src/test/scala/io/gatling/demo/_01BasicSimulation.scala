@@ -1,11 +1,11 @@
-package demo
+package io.gatling.demo
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
 
-class BasicSimulation extends Simulation {
+class _01BasicSimulation extends Simulation {
 
   val httpProtocol = http
     .baseURL("https://api.github.com")
