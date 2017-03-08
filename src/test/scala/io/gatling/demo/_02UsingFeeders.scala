@@ -1,15 +1,14 @@
 package io.gatling.demo
 
 import io.gatling.core.Predef._
+import io.gatling.demo.config.BasicHttpProtocol
 import io.gatling.http.Predef._
+
 import scala.concurrent.duration._
 
 class _02UsingFeeders extends Simulation {
 
-  val httpProtocol = http
-    .baseURL("https://api.github.com")
-    .userAgentHeader("enriquezrene")
-    .acceptHeader("application/vnd.github.v3+json")
+  val httpProtocol = BasicHttpProtocol.GitHubProtocolBuilder
 
   val feeder = Array(
     Map("user" -> "enriquezrene"),

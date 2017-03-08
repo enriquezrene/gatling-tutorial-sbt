@@ -1,15 +1,14 @@
 package io.gatling.demo
 
 import io.gatling.core.Predef._
+import io.gatling.demo.config.BasicHttpProtocol
 import io.gatling.http.Predef._
+
 import scala.concurrent.duration._
 
 
 class _03ChecksScenario extends Simulation{
-  val httpProtocol = http
-    .baseURL("https://api.github.com")
-    .userAgentHeader("enriquezrene")
-    .acceptHeader("application/vnd.github.v3+json")
+  val httpProtocol = BasicHttpProtocol.GitHubProtocolBuilder
 
   val checkStatus = scenario("Check multiple response status codes")
     .exec(http("find_enriquezrene_repos")
