@@ -19,3 +19,5 @@ gatling:test
 clean
 exit
 clean
+gatling:test
+clean
