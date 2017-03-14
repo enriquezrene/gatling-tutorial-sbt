@@ -8,7 +8,7 @@ For run the tests, type:
 
 ```sh
 $ sbt
-$ gatling:test
+> gatling:test
 ```
 
 A report will be generated under build/reports/gatling directory
