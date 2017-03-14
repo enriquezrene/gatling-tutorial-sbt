@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
 
-class _03ChecksScenario extends Simulation{
+class _03ChecksScenario extends Simulation {
   val httpProtocol = BasicHttpProtocol.GitHubProtocolBuilder
 
   val checkStatus = scenario("Check multiple response status codes")
@@ -17,7 +17,7 @@ class _03ChecksScenario extends Simulation{
       .check(status.not(404)))
 
   setUp(
-    checkStatus.inject(constantUsersPerSec(1) during(1 seconds))
+    checkStatus.inject(constantUsersPerSec(1) during (1 seconds))
   ).protocols(httpProtocol)
 
 }
