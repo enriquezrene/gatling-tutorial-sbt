@@ -4,4 +4,4 @@ scala:
 jdk: oraclejdk8
 script:
 - sbt compile
-- sbt gatling:test
+- sbt gatling:testOnly io.gatling.demo._06Loops
