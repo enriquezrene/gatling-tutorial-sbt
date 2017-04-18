@@ -7,7 +7,7 @@ import scala.util.Properties
 
 object BasicHttpProtocol {
 
-  val ghPwd: String = Properties.envOrElse("env.gh.pwd", "NO_PWD_PROVIDED")
+  val ghPwd: String = Properties.envOrElse("gh.pwd", "NO_PWD_PROVIDED")
 
   val GitHubProtocolBuilder = http
     .baseURL("https://api.github.com")
