@@ -3,9 +3,11 @@ package io.gatling.demo.config
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
+import scala.util.Properties
+
 object BasicHttpProtocol {
 
-  val ghPwd: String = System.getenv("env.gh.pwd")
+  val ghPwd: String = Properties.envOrElse("env.gh.pwd", "NO_PWD_PROVIDED")
 
   val GitHubProtocolBuilder = http
     .baseURL("https://api.github.com")
