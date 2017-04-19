@@ -10,7 +10,7 @@ class _02_1UsingFeedersCsv extends Simulation {
 
   val httpProtocol = BasicHttpProtocol.GitHubProtocolBuilder
 
-  val feeder = csv("csv/github-users.csv").random
+  val feeder = csv("data/github-users.csv").random
 
   val findRepos = scenario("Find repos from GitHub")
     .feed(feeder)
